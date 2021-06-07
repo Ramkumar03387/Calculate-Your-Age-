@@ -1,0 +1,15 @@
+import java.util.Calendar;
+
+public class FindYourAge {
+	int year =  calendar.get(Calendar.YEAR);
+public static void main(String[] args){
+    FindYourAge object = new FindYourAge();
+    object.yourAge();
+}
+private void yourAge() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("enter your birth year: ");
+		int user = sc.nextInt();
+		int age =  year - user;
+		System.out.println("your age is: "+age);	
+	}
