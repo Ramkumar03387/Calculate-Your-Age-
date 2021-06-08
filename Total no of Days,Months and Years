@@ -1,0 +1,64 @@
+package example;
+
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.Year;
+import java.util.Arrays;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Random;
+import java.util.Scanner;
+
+public class ExampleClass {
+	Calendar calendar = Calendar.getInstance();
+	int year = calendar.get(Calendar.YEAR);
+	int month = calendar.get(Calendar.MONTH);
+	int date = calendar.get(Calendar.DATE);
+
+	public static void main(String[] args) {
+		ExampleClass ob = new ExampleClass();
+		//ob.findYourAge();
+		ob.calculate_Days_Months_Years();
+	}
+
+	private void calculate_Days_Months_Years() {
+		// put in the date of birth month days year
+		calendar();
+		Scanner sc = new Scanner(System.in);
+		System.out.println("enter your birth date: ");
+		int user_date = sc.nextInt();
+		System.out.println("enter your birth month: ");
+		int user_month = sc.nextInt();
+		System.out.println("enter your birth year: ");
+		int user_year = sc.nextInt();
+		// set method using in user date of birth set
+		calendar.set(Calendar.DATE, user_date);
+		calendar.set(Calendar.MONTH, user_month);
+		calendar.set(Calendar.YEAR, user_year);
+		// get the user output
+		int date1 = calendar.get(Calendar.DATE);
+		int month1 = calendar.get(Calendar.MONTH);
+		int year1 = calendar.get(Calendar.YEAR);
+		//final output
+		int years = year - year1;
+		int months = years * 12;
+		int days = years * 365;
+
+		System.out.println("total days of: " + days);
+		System.out.println("total months of: " + months);
+		System.out.println("total years of: " + years);
+
+	}
+
+	private void calendar() {
+		Calendar calendar = Calendar.getInstance();
+	}
+
+	private void findYourAge() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("enter your birth year: ");
+		int user = sc.nextInt();
+		int age = year - user;
+		System.out.println("your age is: " + age);
+	}
+}
